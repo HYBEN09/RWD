@@ -542,12 +542,16 @@ input[type="search"] {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+
+    /* 높이가 늘어났을 때의 대비 */
     align-items: center;
-    padding: var(--spacing-md);
   }
 
   .menu__link {
+    padding: var(--spacing-md) var(--spacing-lg);
     color: var(--white);
+    font-size: 1.2aㅁrem;
+    font-weight: 700;
     text-shadow: 1px 1px 0 var(--black), -1px -1px 0 var(--black);
   }
 

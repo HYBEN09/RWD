@@ -1,0 +1,9 @@
+.box {
+  background: lime;
+  margin: 100px;
+  /* margin이 더해짐 */
+  width: 100%;
+
+  /* margin이 더해 지지만 더해지지 않은것 처럼보인다. */
+  /* width: auto; */
+}
