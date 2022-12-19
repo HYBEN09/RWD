@@ -542,16 +542,12 @@ input[type="search"] {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-
-    /* 높이가 늘어났을 때의 대비 */
     align-items: center;
+    padding: var(--spacing-md);
   }
 
   .menu__link {
-    padding: var(--spacing-md) var(--spacing-lg);
     color: var(--white);
-    font-size: 1.2aㅁrem;
-    font-weight: 700;
     text-shadow: 1px 1px 0 var(--black), -1px -1px 0 var(--black);
   }
 
@@ -560,16 +556,6 @@ input[type="search"] {
     max-width: var(--container-width);
     margin-left: auto;
     margin-right: auto;
-  }
-
-  /* 데스크탑 트위터 */
-  .twitter__userProfile {
-    width: 100px;
-    height: 100px;
-  }
-
-  /* 데스크탑 메인 콘텐츠 */
-  .appMain {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
@@ -578,6 +564,12 @@ input[type="search"] {
       "book book book book twitter twitter twitter twitter twitter favorite favorite favorite"
       "book book book book . board board board board board board board";
     gap: var(--spacing-base);
+  }
+
+  /* 데스크탑 트위터 */
+  .twitter__userProfile {
+    width: 100px;
+    height: 100px;
   }
 
   .book {

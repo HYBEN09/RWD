@@ -6,89 +6,114 @@ body {
   margin: 0;
 }
 
-.group1 .box {
+.group1 {
   background: gold;
 }
-.group2 .box {
+.group2 {
   background: pink;
 }
-.group3 .box {
+.group3 {
   background: lightgreen;
 }
-.group4 .box {
+.group4 {
   background: skyblue;
 }
-.group5 .box {
+.group5 {
   background: salmon;
 }
-.group6 .box {
+.group6 {
   background: violet;
 }
-.group7 .box {
+.group7 {
   background: aquamarine;
 }
-.group8 .box {
+.group8 {
   background: lightseagreen;
 }
-.group9 .box {
+.group9 {
   background: MediumPurple;
 }
-.group10 .box {
+.group10 {
   background: MidnightBlue;
 }
-.group11 .box {
+.group11 {
   background: Olive;
 }
-.group12 .box {
+.group12 {
   background: SandyBrown;
 }
 
-/*! 모든 디바이스 */
+/*! 공통 레이아웃 */
 .container {
-  background: silver;
-  border: 1px solid red;
-  display: flex;
-  flex-flow: row wrap;
-  padding: 12px;
+  border: 2px solid red;
+  margin: 50px;
+  display: grid;
+  gap: 24px;
+  grid-template-rows: repeat(3, 200px);
 }
 
-div[class*="group"] {
-  width: 100%;
-  margin: 0;
+.group1 {
+  grid-area: box1;
+}
+.group2 {
+  grid-area: box2;
+}
+.group3 {
+  grid-area: box3;
+}
+.group4 {
+  grid-area: box4;
+}
+.group5 {
+  grid-area: box5;
 }
 
-/* 그리드 활용해 순서 바꾸기 */
-.box {
-  margin: 12px;
-  height: 150px;
+/*! 모바일 레이아웃 */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "box1 box2"
+      "box1 box3"
+      "box4 box5";
+  }
+  /* 
+  .group2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  } */
 }
 
-/*! 768px 이상일 때 */
-@media (min-width: 768px) {
-  div[class*="group"] {
-    width: 50%;
+/*! 데스크탑 레이아웃 */
+@media (min-width: 769px) {
+  .container {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      "box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2"
+      "box1 box1 box1 box1 box5 box5 box5 box5 box5 box4 box4 box4"
+      "box1 box1 box1 box1 . box3 box3 box3 box3 box3 box3 box3";
   }
 
-  /* 그리드 활용해 순서 바꾸기 */
-  div.group1,
-  div.group4 {
-    width: 100%;
-  }
-}
-
-/*! 1280px 이상일 때 */
-@media (min-width: 1280px) {
-  div[class*="group"] {
-    width: 25%;
+  /* .group1 {
+    grid-area: 2/1/4/5;
   }
 
-  /* 그리드 활용해 순서 바꾸기 */
-  div.group2 {
-    order: 1;
+  .group2 {
+    grid-column: 1/13;
+    grid-row: 1/2;
   }
 
-  div.group1,
-  div.group12 {
-    width: 75%;
+  .group3 {
+    grid-area: 3/6/4/13;
   }
+
+  .group4 {
+    grid-area: 2/5/3/10;
+  }
+
+  .group5 {
+    grid-area: 2/10/3/13;
+  } */
 }
